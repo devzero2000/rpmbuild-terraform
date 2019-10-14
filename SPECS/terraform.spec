@@ -1,4 +1,9 @@
-%define debug_package %{nil}
+# Don't try fancy stuff like debuginfo, which is useless on binary-only
+# packages. Don't strip binary too
+# Be sure buildpolicy set to do nothing
+%define        __spec_install_post %{nil}
+%define          debug_package %{nil}
+%define        __os_install_post %{_dbpath}/brp-compress
 
 Name:           terraform
 Version:        0.12.10
@@ -16,7 +21,7 @@ Terraform is a tool for building, changing, and combining infrastructure safely
 and efficiently.
 
 %prep
-%autosetup
+%autosetup -c 
 
 %install
 mkdir -p %{buildroot}/%{_bindir}

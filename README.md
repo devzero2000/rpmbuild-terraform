@@ -1,8 +1,5 @@
 # rpmbuild-terraform
 
-
-[![License](https://img.shields.io/badge/license-GPLv3-brightgreen.svg?style=flat)](COPYING)
-
 Create a terraform RPM for RHEL/CentOS.
 
 ## Requirements
@@ -19,7 +16,7 @@ To build the package follow the steps outlined below
     source /etc/os-release
     tmp=$(mktemp -d)
 
-    git clone https://github.com/linuxhq/rpmbuild-terraform.git ${tmp}
+    git clone https://github.com/devzero2000/rpmbuild-terraform.git ${tmp}
     mkdir -p ${tmp}/{SOURCES,SRPMS}
     spectool -g -C ${tmp}/SOURCES ${tmp}/SPECS/*.spec
 
@@ -39,10 +36,9 @@ To build the package follow the steps outlined below
 
     rm -rf ${tmp}
 
-
 ## License
 
-Copyright (C) 2018 Taylor Kimball <tkimball@linuxhq.org>
+Copyright (C) 2019 Elia Pinto <pinto.elia@gmail.com>
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
